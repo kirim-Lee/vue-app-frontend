@@ -11,7 +11,7 @@
       v-for="(d, index) in user_data?.resume"
       :key="index"
     >
-      <Card :top="!index" :resume="d" :show="index % 2" />
+      <Card :top="!index" :resume="d" :show="index % 2 > 0" />
       <div class="col-sm2 text-center flex-column d-none d-sm-flex">
         <div class="row h-50">
           <div class="col" :class="[index ? 'border-right' : '']" />

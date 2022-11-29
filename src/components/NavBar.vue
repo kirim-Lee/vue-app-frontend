@@ -22,9 +22,9 @@
             :key="menu_object.key"
           >
             <a
-              href="#"
+              :href="menu_object.URL"
               :class="{ 'nav-link': true, active: menu === menu_object.key }"
-              @click.prevent="onMovePage($event, menu_object)"
+              @click="onMovePage($event, menu_object)"
               >{{ menu_object.value }}</a
             >
           </li>
@@ -38,9 +38,9 @@
 import { computed, ref } from 'vue';
 
 const menus = [
-  { key: 'home', value: '홈', URL: '#', position: 'left' },
-  { key: 'app', value: '애플리케이션', URL: '#', position: 'left' },
-  { key: 'me', value: 'Profile', URL: '#', position: 'right' },
+  { key: 'home', value: '홈', URL: '/', position: 'left' },
+  { key: 'app', value: '애플리케이션', URL: '/application', position: 'left' },
+  { key: 'me', value: 'Profile', URL: '/profile', position: 'right' },
 ];
 
 export default {
