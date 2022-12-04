@@ -32,10 +32,10 @@
 </template>
 
 <script>
-import { computed, ref } from 'vue';
+import { computed } from 'vue';
 
 const menus = [
-  { key: 'home', value: '홈', URL: '/', position: 'left' },
+  { key: 'home', value: '홈', URL: '/home', position: 'left' },
   { key: 'app', value: '애플리케이션', URL: '/application', position: 'left' },
   { key: 'me', value: 'Profile', URL: '/profile', position: 'right' },
 ];

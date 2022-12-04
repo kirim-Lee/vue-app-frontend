@@ -1,16 +1,12 @@
-import { defineComponent } from 'vue';
 import Profile from '../components/Profile.vue';
 import Application from '../components/Application.vue';
-
-const NotFound = defineComponent({
-  template: `<div>Not Found</div>`,
-});
+import NotFound from '../components/NotFound.vue';
 
 const routes = [
   { path: '/', redirect: '/profile' },
   { path: '/profile', name: 'profile', component: Profile, alias: '/home' },
   { path: '/application', component: Application },
-  { path: '/:(.*)+', component: NotFound },
+  { path: '/:catchAll(.*)+', component: NotFound },
 ];
 
 export default routes;

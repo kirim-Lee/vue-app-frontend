@@ -7,6 +7,9 @@ export default {
 };
 </script>
 
-<template><nav-bar /> <router-view /></template>
+<template>
+  <nav-bar />
+  <router-view />
+</template>
 
 <style></style>
