@@ -21,12 +21,9 @@
             v-for="menu_object in menu.value"
             :key="menu_object.key"
           >
-            <a
-              :href="menu_object.URL"
-              :class="{ 'nav-link': true, active: menu === menu_object.key }"
-              @click="onMovePage($event, menu_object)"
-              >{{ menu_object.value }}</a
-            >
+            <router-link :to="menu_object.URL" class="nav-link">{{
+              menu_object.value
+            }}</router-link>
           </li>
         </ul>
       </div>
@@ -46,8 +43,6 @@ const menus = [
 export default {
   name: 'NavBar',
   setup() {
-    const menu = ref('home');
-
     const left_menus = computed(() =>
       menus.filter((i) => i.position === 'left')
     );
@@ -56,17 +51,11 @@ export default {
       menus.filter((i) => i.position === 'right')
     );
 
-    const onMovePage = (menu_object) => {
-      menu.value = menu_object.key;
-    };
-
     return {
-      menu,
       menu_category: [
         { id: 1, me_auto: true, value: left_menus.value },
         { id: 2, me_auto: false, value: right_menus.value },
       ],
-      onMovePage,
     };
   },
 };
